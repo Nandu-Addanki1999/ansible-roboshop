@@ -20,10 +20,10 @@
 
   - name: allow remote connection
     ansible.builtin.replace:
-      path: /etc/mongod.configuring
+      path: /etc/mongod.conf
       regexp: '127.0.0.1'
       replace: '0.0.0.0' 
-      
+
   - name: restart mongodb
     ansible.builtin.service:
       name: mongod
