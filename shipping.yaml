@@ -7,8 +7,8 @@
       name: "{{ item }}"
       state: installed
     loop: 
-     - PyMySQL
-     - maven
+    - PyMySQL
+    - maven
 
   - name: create app directory
     ansible.builtin.file:
