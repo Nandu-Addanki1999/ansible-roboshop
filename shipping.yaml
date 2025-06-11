@@ -75,7 +75,7 @@
 
   - name: import data
     tags:
-    - import:
+    - import
     community.mysql.mysql_db:
       name: all
       login_user: root 
