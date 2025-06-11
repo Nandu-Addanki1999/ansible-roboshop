@@ -1,18 +1,18 @@
 - name: configure shipping component
   hosts: shipping
   become: yes
-  tasks: 
+  tasks:
   - name: install maven and mysql
     ansible.builtin.dnf:
       name: "{{ item }}"
       state: installed
-    loop: 
+    loop:
     - maven
     - mysql
-
-  - name: install PyMySQL and cryptography
+    
+  - name: install PyMySQL and cryptography 
     ansible.builtin.pip:
-      name:  "{{ item }}"
+      name: "{{ item }}"
       executable: pip3.9
     loop:
     - cryptography
@@ -31,8 +31,8 @@
       home: /app
 
   - name: download shipping code
-    ansible.builtin.get_url: 
-      url: https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
+    ansible.builtin.get_url:
+      url: https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip 
       dest: /tmp/shipping.zip
 
   - name: extract shipping code
@@ -86,7 +86,7 @@
     loop:
     - /app/db/schema.sql
     - /app/db/app-user.sql
-    - /app/db/master-data.sql 
+    - /app/db/master-data.sql
 
   - name: restart shipping
     tags:
@@ -94,3 +94,7 @@
     ansible.builtin.service:
       state: restarted
       name: shipping
+  
+
+
+  
