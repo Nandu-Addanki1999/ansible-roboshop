@@ -4,11 +4,12 @@
   tasks: 
   - name: install maven
     ansible.builtin.dnf:
-      name: "{{ item }}"
+      name: maven
       state: installed
-    loop: 
-    - PyMySQL
-    - maven
+
+  - name: install PyMySQL
+    ansible.builtin.pip:
+      name:  PyMySQL
 
   - name: create app directory
     ansible.builtin.file:
