@@ -78,14 +78,14 @@
     - import
     community.mysql.mysql_db:
       name: all
-      login_user: root 
+      login_user: root
       login_password: RoboShop@1
       login_host: mysql.nandu.sbs
       state: import
       target: "{{ item }}"
     loop:
     - /app/db/schema.sql
-    - /app/db/app-user.sql 
+    - /app/db/app-user.sql
     - /app/db/master-data.sql 
 
   - name: restart shipping
